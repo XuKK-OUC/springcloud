@@ -22,7 +22,7 @@ public class DeptController {
     private DeptService service;
 
     @Autowired
-    private DiscoveryClient client;
+    private DiscoveryClient client;  //服务发现接口
     @RequestMapping(value="/dept/add",method= RequestMethod.POST)
     public boolean add(@RequestBody Dept dept)
     {

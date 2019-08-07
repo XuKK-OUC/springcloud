@@ -9,7 +9,9 @@
         <module>microservicecloud-api</module>
         <module>microservicecloudprovider-dept-8001</module>
         <module>microservicecloud-consumer-dept-80</module>
+        <module>microservicecloud-eureka-7001</module>
     </modules>
+    <!--父工程打包方式为pom-->
     <packaging>pom</packaging>
 
 
@@ -21,6 +23,8 @@
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
     </properties>
+
+
 
     <dependencyManagement>
         <dependencies>
@@ -71,4 +75,24 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <finalName>microservicecloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

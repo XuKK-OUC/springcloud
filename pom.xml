@@ -16,6 +16,7 @@
         <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-consumer-dept-feign</module>
         <module>microservicecloud-provider-hystrix-dept-8001</module>
+        <module>microservicecloud-consumer-hystrix-dashboard</module>
     </modules>
     <!--父工程打包方式为pom-->
     <packaging>pom</packaging>

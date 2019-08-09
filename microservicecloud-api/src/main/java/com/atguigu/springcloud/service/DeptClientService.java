@@ -14,7 +14,8 @@ import java.util.List;
  * @date 2019/8/7 20:41
  */
 
-@FeignClient(value = "MICROSERVICECLOUD-DEPT") //服务名  feign 接口+注解
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT") //服务名  feign 接口+注解
+    @FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class)//服务降级
 public interface DeptClientService {
     @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)  //还是服务提供者controller中的路径
     public Dept get(@PathVariable("id") long id);

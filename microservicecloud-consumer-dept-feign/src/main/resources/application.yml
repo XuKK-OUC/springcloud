@@ -1,5 +1,12 @@
 server:
   port: 80
+
+
+feign:
+  hystrix:
+    enabled: true   #服务降级时会使用
+
+
 eureka:
   client:
     register-with-eureka: false
